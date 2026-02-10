@@ -1,0 +1,2 @@
+# Exercicios_EstruturaDeDados_Pratica
+a
