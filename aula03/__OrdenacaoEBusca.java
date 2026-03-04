@@ -131,7 +131,7 @@ public class __OrdenacaoEBusca {
     // tendo como chave o número do candidato.
     public Candidato pesquisaBinaria(int chave, Candidato[] cand) {
 		int first = 0;
-		int last = cand.length;
+		int last = cand.length - 1;;
 
 		while (first <= last) {
 			int middle = (first + last) / 2;
@@ -152,19 +152,46 @@ public class __OrdenacaoEBusca {
     // Método encarregado de ordenar os Candidatos 
     // armazenados em um vetor pelo número do candidato.
     public void selectionSort(Candidato cand[]) {
-    	// Seu código deve ser desenvolvido aqui
-    }
+		for (int i = 0; i < cand.length; i++) {
+			int min = i;
+			for (int j = i + 1; j < cand.length; j++) {
+				if (cand[j].getNumero_candidato() < cand[min].getNumero_candidato()) {
+					min = j;
+				}
+			}
+			Candidato temp = cand[min];
+			cand[min] = cand[i];
+			cand[i] = temp;
+		}
+	}
  
     // Método encarregado de ordenar os Candidatos 
     // armazenados em um vetor pela idade do candidato.
     public void insertionSort(Candidato[] cand) {
-    	// Seu código deve ser desenvolvido aqui
-    }
+		for (int i = 1; i < cand.length; i++) {
+			Candidato candidato = cand[i];
+			int j = i - 1;
+			
+			while (j >= 0 && cand[j].getIdade() > candidato.getIdade()) {
+				cand[j + 1] = cand[j];
+				j--;
+			}
+			cand[j + 1] = candidato;
+		}
+	}
     
     // Método encarregado de ordenar os Candidatos 
     // armazenados em um vetor pelo nome do candidato.
     public void bubbleSort(Candidato[] cand) {
-    	// Seu código deve ser desenvolvido aqui
-    }
-    */
-  }
+		for (int i = 0; i < cand.length; i++) {
+			for (int j = 0; j < cand.length - 1 - i; j++) {
+				// Usa compareTo para comparar Strings em ordem alfabética
+				if (cand[j].getNome().compareToIgnoreCase(cand[j + 1].getNome()) > 0) {
+					Candidato temp = cand[j];
+					cand[j] = cand[j + 1];
+					cand[j + 1] = temp;
+				}
+			}
+		}
+	}
+}
