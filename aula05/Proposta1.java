@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Proposta1 {
@@ -12,11 +13,12 @@ public class Proposta1 {
 
         PilhaInt base_ = converterDecQulaquer(num, sist_num);
         String resp = "";
+        base_.exibir();
         while (base_.isEmpty() != true){
-            int topo = base_.top();
+            int topo = base_.pop();
             resp += simbolos[topo];
         }
-        System.out.println("Dec = " + num + ", "Base ("+ sist_num +") = " + resp);
+        System.out.println("Dec = "+ num + ", Base ("+ sist_num +") = " + resp);
 
     }
 

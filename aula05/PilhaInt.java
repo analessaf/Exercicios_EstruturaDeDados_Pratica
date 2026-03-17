@@ -1,3 +1,4 @@
+
 public class PilhaInt {
     private int dados[];
     private int topo;
