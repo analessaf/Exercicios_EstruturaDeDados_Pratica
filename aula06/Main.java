@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        int duracao = 30;
+        int duracao = 480;
         Fila clientes = new Fila(duracao*2);
         int minuto;
         int qtd_c = 0;
@@ -23,12 +23,8 @@ public class Main {
                     maior_tempo = temp;
                 }
             }
-            if (r > maior_tempo){
-                maior_tempo = r;
-            }
             int k = rand.nextInt(3);
             if (k == 1){
-
                 clientes.enqueue(minuto);
             }else if (k == 2) {
                 clientes.enqueue(minuto);
