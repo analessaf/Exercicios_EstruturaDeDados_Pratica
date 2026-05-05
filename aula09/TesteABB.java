@@ -63,7 +63,7 @@ public class TesteABB {
                     System.out.println("\nFuncionários cadastrados com sucesso.");
                     break;
                 case 8:
-                    System.out.print("Deseja realmente sair? (S/N): ");
+                    System.out.print("Deseja sair? (S): ");
                     char resp = sc.next().charAt(0);
 
                     if (resp == 'S' || resp == 's') {

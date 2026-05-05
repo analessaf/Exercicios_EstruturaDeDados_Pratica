@@ -397,6 +397,7 @@ public class ABB<T extends Comparable<T>> {
             if (f.getIdade() >= idade) {
                 System.out.println(f);
             }
+            mostrarPorIdade(no.getFilhoDireito(), idade);
         }
     }
 }
